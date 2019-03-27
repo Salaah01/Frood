@@ -1,0 +1,139 @@
+@media only screen and (max-width: 1245px) {
+    
+    .top-container {
+        margin-bottom: 4%;
+}
+    
+    .section-body {
+        margin-top: 0;
+        width: 80%;
+        margin: auto;
+        font-size: 1.3em;
+    }
+}
+
+/* Small table to small big tablet from 768 to 1023px */
+@media only screen and (max-width:1023px) {
+    
+    .top-container {
+        height: 400px;;
+    }
+    
+    .top-container h4{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    
+    .bottom-container{
+    height: 400px;
+    }
+    
+    .section {
+        height: 80%;
+    }
+    
+    .icon-container {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .icon-container i {
+        color: white;
+        font-size: 3em;
+        padding-top: 9px;
+    }
+    
+    .section-title {
+        margin-bottom: 3%;
+    }
+    
+    .section-body {
+        margin-top: 0px;
+        width: 100%;
+        font-size: 1.2em;
+    }
+}
+
+/* Small phones to small tablets from 481 to 767px */
+@media only screen and (max-width:767px) {
+    
+    h1 {
+        font-size: 4em;
+    }
+    
+    h4 {
+        font-size: 1.5em;
+    }
+    
+    .top-container {
+        height: 300px;
+        padding-bottom: 29px;
+        margin: 0;
+    }
+    
+    .bottom-container{
+    height: 300px;
+    }
+
+    .section {
+        padding: 0 15% 30px 15%;
+        width:70%;
+        height: auto;
+        margin: 0;
+        margin-top: 30px;
+        flex-direction: row;
+        text-align: left;
+        display:flex;
+        align-items:center;
+    }
+    
+    .icon-container {
+        float: left; 
+        margin: 0 auto;
+        
+    }
+    
+    .contents-container {
+        float: left;
+        width: 70%;
+        margin-left: 30px;
+    }
+    
+    .section-title {
+        font-size: 1.2em;
+    }
+    
+    .section-body {
+    }
+    
+}
+
+@media only screen and (max-width:500px) {
+    
+    .top-container {
+        height: 250px;
+    }
+    
+    .top-container h4 {
+        margin-bottom: 5%;
+    }
+    
+    .section {
+        padding: 0 5% 30px 5%;
+        width:90%;
+    }
+    
+    .contents-container {
+        margin-left: 2%;
+    }
+    
+}
+
+/* Small phones to small tablets from 370 to 414px (iPhone 6/7/8) */
+@media only screen and (max-width:414px) {
+    
+}
+
+/* From 0 to 369px (Galaxy S5) */
+@media only screen and (max-width:360px) {
+}

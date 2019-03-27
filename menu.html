@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Frood</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/base.css">
+        <link rel="stylesheet" type="text/css" href="css/menu.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/menu.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet">
+    </head>
+    <body>
+
+        <nav>  
+            <div class="ui pointing menu">
+                <a class="item">Frood</a>
+                <a class="item">Home</a>
+                <a class="active item">Menu</a>
+                <a class="item">Your Plate
+                </a>
+            </div>
+        </nav>
+        
+        <section class="overlay hide">
+            <div class="overlay-options">
+                <div class="main-title">
+                    <div class="row">
+                        <h4>Extras</h4>
+                        <button class="btn hide" id="overlay-btn-cancel" type="button">Cancel</button>
+                        <button class="btn hide" id="overlay-btn-skip" type="button">Skip</button>
+                        <button class="btn hide" id="overlay-btn-continue" type="button">Continue</button>
+                    </div>
+                    <hr>
+                </div>
+                <div class="option-pizza hide">
+                    <div class="pizza-size">
+                        <p>Pizza Size:</p>
+                    </div>
+                    <div class="pizza-toppings">
+                        <p>Additional Toppings:</p>
+                    </div> 
+                </div>
+                <div class="other-options hide">
+                    <p>Please Select:</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <div class="left-container">
+                <div class="title">
+                    <h2>Categories</h2>
+                    <hr>
+                </div>
+                <div class="category-list">
+                    <uL>
+                        
+                    </uL>
+                </div>
+            </div>
+
+            <div class="mid-container">
+        
+            </div>
+
+            <div class="right-container">
+                <div class="title">
+                    <h2>Your Plate</h2>
+                    <hr>
+                </div>
+            </div>    
+        </section>
+        
+        
+        
+        
+            <!-- Script Files --> 
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="js/menu.js" type="text/javascript"></script>
+        <script src="js/populateMenu.js" type="text/javascript"></script>
+        <script type="text/javascript" src="js/addToBasket.js"></script>
+        
+    </body>
+    
+</html>

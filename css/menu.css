@@ -1,0 +1,215 @@
+body {
+    background-color: #ecf0f1;
+}
+
+header {
+    background: #870000; /* fallback for old browsers */
+    background: linear-gradient(to right, #870000, #cc4113);
+    position: fixed;
+    width: 100%;
+}
+
+nav {
+    padding-bottom: 15px;
+    position: fixed;
+    width: 100%;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    text-align: center;
+    list-style: none;
+    cursor: pointer;
+
+}
+
+a.cat-link {
+    text-decoration: none;
+    vertical-align: middle;
+    font-style: italic;
+    background-color: #f7f7f7;
+}
+
+section {
+    padding-top: 70px;
+    width: 90%;
+}
+
+.left-container,
+.mid-container,
+.right-container {
+    border-radius: 50px;
+    box-shadow: 0px -1px 10px #c4c4c4;
+    background-color: white;
+}
+
+.left-container {
+    background-color: #f7f7f7;
+    float: left;
+    position: fixed;
+    top: 120px;
+    width: 12%;
+    padding: 30px;
+    margin-left: 35px;
+}
+
+.mid-container {
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 1px;
+    padding-left: 50px;
+    padding-right: 50px;  
+}
+
+.right-container {
+    width: 20%;
+    position: fixed;
+    right: 0;
+    background-color: #f7f7f7;
+    min-height: 500px;
+    top: 120px;
+    margin-right: 35px;
+    padding: 30px;
+}
+
+
+h1 {
+    color: white;
+    font-size: 4em;
+    padding: 10px;
+    letter-spacing: 2px;
+}
+
+h2 {
+    color: black;
+    margin-bottom: 10px;
+    font-weight: 300;
+    font-size: 2em;
+}
+
+hr {
+    border-color: #d6d6d6;
+}
+
+/*--------------------------------------------------*/
+/*LEFT CONTAINER*/
+/*--------------------------------------------------*/
+
+.left-container h2 {
+    font-size: 1.25em;
+    text-align: center;
+}
+
+/*--------------------------------------------------*/
+/*MIDDLE CONTAINER*/
+/*--------------------------------------------------*/
+
+.menu-item-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item-content.pizza p.item-info{
+    margin: 0;
+    margin-bottom:10px;
+}
+
+.menu-item-content.pizza .new-row{
+
+    height: 40px;
+}
+
+.menu-item-content .new-row {
+    display: flex;
+    justify-content:space-between;
+}
+
+.cat-title {
+    width: 100%;
+}
+
+.item-name {
+    margin-bottom: 10px;
+}
+
+.item-price {
+    text-align: right;
+}
+
+.item-info {
+    font-style: italic;
+    color: #7f8c8d;
+}
+
+/*--------------------------------------------------*/
+/*RIGHT CONTAINER*/
+/*--------------------------------------------------*/
+
+.right-container h2 {
+    font-size: 1.25em;
+    text-align: center;
+}
+
+/*--------------------------------------------------*/
+/*OPTIONS OVERLAY CONTAINER*/
+/*--------------------------------------------------*/
+
+.overlay {
+    width: 50%;
+    position: fixed;
+    left: 25%;
+}
+
+.hide {
+    display: none;
+}
+
+.overlay-options {
+    margin: 0 auto;
+    margin-top: 100px;  
+    height: 500px;
+    width: 40%;
+    background-color: #ecf0f1;
+    border-radius: 50px;
+    box-shadow: 0px -1px 10px #c4c4c4;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.overlay-options h4 {
+    margin: 0;
+}
+
+.option-grp {
+    display: flex;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content:space-between;
+    border: 1px solid #870000;
+    background-color: #f7f7f7;
+    width: 90%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.option-selected {
+    background-color: #870000;
+    color: white;
+}
+
+.option-grp:hover {
+    background-color: #870000;
+    color: white;
+}
+
+#overlay-btn-continue {
+    background-color: #2ecc71;
+}
