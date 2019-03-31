@@ -40,7 +40,20 @@ h4 {
     border-radius: 0.25rem;
 }
 
+.btn:active {
+    box-shadow: 0 3px 0 #00823F;
+    top: 3px;
+}
+
 .row {
     display: flex;
     justify-content: space-between;
+}
+
+i {
+    font-size: 1.5em;
+    vertical-align: middle;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #646565;
 }

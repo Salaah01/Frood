@@ -1,4 +1,35 @@
-var type = ["Pizza", "Burger", "Pasta", "Side", "Dip", "Dessert", "Drinks"];
+//var type = ["Pizza", "Burger", "Pasta", "Side", "Dip", "Dessert", "Drinks"];
+
+var category = [
+    {
+        id: 1,
+        name: "Pizza"
+    },
+    {
+        id: 2,
+        name: "Burger"
+    },
+    {
+        id: 3,
+        name: "Pasta"
+    },
+    {
+        id: 4,
+        name: "Side"
+    },
+    {
+        id: 5,
+        name: "Dip"
+    },
+    {
+        id: 6,
+        name: "Dessert"
+    },
+    {
+        id: 7,
+        name: "Drinks"
+    },
+];
 
 var pizzaSizes = [
     {
@@ -639,7 +670,7 @@ var menu = [
         item: 'Salad',
         type: 'Side',
         price: 2.00,
-        options: ['ADD OPTIONS HERE']
+        options: []
     },
     {
         id: 47,

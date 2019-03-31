@@ -51,6 +51,12 @@ section {
     background-color: white;
 }
 
+.left-container:hover,
+.mid-container:hover,
+.right-container:hover {
+    box-shadow: 0px -1px 25px #c4c4c4;
+}
+
 .left-container {
     background-color: #f7f7f7;
     float: left;
@@ -58,13 +64,13 @@ section {
     top: 120px;
     width: 12%;
     padding: 30px;
-    margin-left: 35px;
+    margin-left: 1%;
 }
 
 .mid-container {
     width: 50%;
     margin: 0 auto;
-    padding-top: 1px;
+    padding-top: 30px;
     padding-left: 50px;
     padding-right: 50px;  
 }
@@ -74,9 +80,9 @@ section {
     position: fixed;
     right: 0;
     background-color: #f7f7f7;
-    min-height: 500px;
+    height: 500px;
     top: 120px;
-    margin-right: 35px;
+    margin-right: 3%;
     padding: 30px;
 }
 
@@ -104,8 +110,26 @@ hr {
 /*--------------------------------------------------*/
 
 .left-container h2 {
-    font-size: 1.25em;
+    font-size: 1.75em;
     text-align: center;
+}
+
+.left-container li {
+    background-color: #ecf0f1;
+    border: 0.5px dotted #870000;
+    border-radius: 5px;
+}
+
+.left-container li:hover {
+    background-color: #870000;
+    border: 0.5px dotted #870000;
+    border-radius: 5px;
+    color: white;
+    transition: 500;
+}
+
+a.cat-link {
+    background-color: rgba(255, 0, 0, 0);
 }
 
 /*--------------------------------------------------*/
@@ -115,6 +139,11 @@ hr {
 .menu-item-content {
     display: flex;
     flex-direction: column;
+}
+
+.menu-item-content i:hover,
+.main-item-selected {
+    color: #2ecc71;
 }
 
 .menu-item-content.pizza p.item-info{
@@ -147,15 +176,104 @@ hr {
 .item-info {
     font-style: italic;
     color: #7f8c8d;
+    width: 75%;
 }
 
 /*--------------------------------------------------*/
 /*RIGHT CONTAINER*/
 /*--------------------------------------------------*/
 
+.right-container .container-content {
+    overflow-y: auto;
+    height: 90%;
+}
+
+.right-container p {
+    margin: 0;
+}
+
 .right-container h2 {
-    font-size: 1.25em;
+    font-size: 1.75em;
+    margin: 0;
+    padding-top: 1px;
+}
+
+.basket-btn {
+    background-color: #294ab9;
+    display: flex;
+    flex-flow: column;
+    vertical-align: middle;
+    justify-content: center;
+    height: 40px;
+    min-width: 100px;
+    border-radius: 5px;
+}
+
+#basket-total {
+    margin: 0;
+    color: white;
+    margin-right: 10px;
+}
+
+.basket-btn i {
+    padding-right: 10px;
+}
+
+#basket-total i {
+    color: white;
+}
+
+#basket-total {
+    float: right;
+    vertical-align: middle;
+    padding: 2px;
+}
+
+.empty-plate {
+    height: 90%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    filter: opacity(10%);
+}
+
+.empty-plate i {
+    font-size: 15em;
+}
+
+.order-main {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 00;
+    letter-spacing: 0.5px;
+    margin: 0px 10px 0px 0;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.order-body {
+    font-style: italic;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: flex;
+    margin-left: 25px;
+    margin-right: 10px;
+    font-size: 0.80em;
+    justify-content: space-between
+}
+
+.right-container .order-grp {
+    border-bottom: 0.5px solid #afafaf;
+    border-bottom-style: dotted
+}
+
+.container-content .order-grp:hover {
+    background-color: #dedede;
+}
+
+.minus-item i:hover{
+    color: #870000;
 }
 
 /*--------------------------------------------------*/
@@ -166,6 +284,24 @@ hr {
     width: 50%;
     position: fixed;
     left: 25%;
+}
+
+#overlay-btn-cancel i{
+    color: #e30303;
+}
+
+#overlay-btn-continue i{
+    color: #2ecc71;
+}
+
+#overlay-btn-skip {
+    color: orange;
+}
+
+.overlay-btn {
+    font-size: 1.5em;
+    margin-top: 5px;
+    
 }
 
 .hide {
@@ -181,7 +317,7 @@ hr {
     border-radius: 50px;
     box-shadow: 0px -1px 10px #c4c4c4;
     padding: 30px;
-    overflow-y: auto;
+    overflow-y:auto;
 }
 
 .overlay-options h4 {
@@ -210,6 +346,12 @@ hr {
     color: white;
 }
 
-#overlay-btn-continue {
-    background-color: #2ecc71;
+.option-grp:hover > .option-price i {
+    color: white;
+}
+
+.option-add i {
+    color: #870000;
+    font-size: 1.2em;
+    
 }

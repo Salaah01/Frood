@@ -1,45 +1,50 @@
 // Add all the Categories to the Menu and Cateogry Section
-type.forEach(function (cat) {
+category.forEach(function (cat) {
 
     $(".mid-container").append(
-                "<div class='menu-category " + cat.toLowerCase() + "' >\n" +
+                "<div class='menu-category " + cat.name.toLowerCase() + "' id='mid-catId-" + cat.id + "'>\n" +
                     "<div class='cat-title'>\n" +
-                        "<h2>" + cat + "</h2>\n" +
+                        "<h2>" + cat.name + "</h2>\n" +
                         "<hr>\n" +
                     "</div>\n" +
-                "<div class='menu-item-content " + cat.toLowerCase() + "'>\n" +
+                "<div class='menu-item-content " + cat.name.toLowerCase() + "'>\n" +
             "</div>" +
         "</div>"
     );
     
-    $(".left-container ul").append("<li><a class='cat-link' href='#'>" + cat + "</a></li>");
+    $(".left-container ul").append("<li id='left-catId-" + cat.id + "'><a class='cat-link'>" + cat.name + "</a></li>");
+});
+
+// A list of all the categories
+categoryList = [];
+category.forEach(function(catObj) {
+    categoryList.push(catObj.name)
 });
 
 // Add all Menu Items
+
 menu.forEach(function (item) {
-    var category = item.type;
-    if (type.indexOf(category) >-1) {
+    var cat = item.type;
+    if (categoryList.indexOf(cat) >-1) {
         
         // Add to the Main Container
-        if (category != "Pizza") {
-            $(".menu-item-content." + category.toLowerCase()).append(
+        if (cat != "Pizza") {
+            $(".menu-item-content." + cat.toLowerCase()).append(
                 "<div class='new-row'>\n" +
                     "<p class='item-name'>" + item.item + "</p>\n" +
                     "<p class='item-price'>&pound" + item.price.toFixed(2) + "\n " +
-                        "<span class='plus-item id-" + item.id + "'><i class='fas fa-plus-circle''></i></span>\n" +
-                        "<span class='minus-item id-" + item.id + "'><i class='fas fa-plus-circle''></i></span>\n" + 
+                        "<span class='plus-item id-" + item.id + "'><i class='fas fa-plus''></i></span>\n" +
                         "<span class='no-items id-" + item.id + "'></span>" +
                     "</p>\n" +
                 "</div>"
             ); 
         } else {
-            $(".menu-item-content." + category.toLowerCase()).append(
+            $(".menu-item-content." + cat.toLowerCase()).append(
                 "<div class='new-row'>\n" +
                     "<p class='item-name'>" + item.item + "</p>\n" +
                     "<p class='item-price'>\n" +
                         "&pound" + item.price.toFixed(2) + "\n" +
-                        " <span class='plus-item id-" + item.id + "'><i class='fas fa-plus-circle''></i></span>\n" +
-                        " <span class='minus-item id-" + item.id + "'><i class='fas fa-minus-circle''></i></span>\n" +
+                        " <span class='plus-item id-" + item.id + "'><i class='fas fa-plus''></i></span>\n" +
                         " <span class='no-items id-" + item.id + "'></span>" +
                     "</p>" +
                 "</div class='new-row\n" +
@@ -67,7 +72,7 @@ pizzaSizes.forEach(function(elem) {
             "<div class='option-price'>\n" +
                 "<p>\n" + 
                     price + "\n" +
-                    " <span class='option-add'><i class='fas fa-plus-circle''></i></span>\n" +
+                    " <span class='option-add'><i class='fas fa-plus'></i></span>\n" +
                 "</p>" +
             "</div>" +
         "</div>"
@@ -90,11 +95,23 @@ pizzaXtraToppings.forEach(function(elem) {
             "<div class='option-price'>\n" +
                 "<p>\n" + 
                     price + "\n" +
-                    " <span class='option-add'><i class='fas fa-plus-circle''></i></span>\n" +
+                    " <span class='option-add'><i class='fas fa-plus'></i></span>\n" +
                 "</p>" +
             "</div>" +
         "</div>"
     );
 });
 
+// Set Up Categories List (Left Container) to Jump to the Correct Section in the Menu
 
+$('.left-container li').on("click", function() {
+    var leftCatId = $(this).attr("id");
+    var midCatId = leftCatId.replace("left","mid");
+    scrollToId(midCatId)    
+});
+
+function scrollToId(id) {
+    elem = document.getElementById(id);
+    console.log(elem.offsetTop);
+    window.scrollTo({left: elem.offsetLeft, top: elem.offsetTop - 55, behavior: 'smooth'});
+}

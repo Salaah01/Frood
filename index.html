@@ -1,63 +1,78 @@
-<!DOCTYPE html>
-<html>
+    <!DOCTYPE html>
+    <html>
 
-    <head>
-    
-        <title>Frood</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="css/base.css">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <link rel="stylesheet" type="text/css" href="css/index-queries.css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet">
-    </head>
-    
-    <body>
-        
-        <div class="top-container">
-            <h1>FROOD</h1>
-            <h4>You do the dishes and we'll do the cooking and delivering</h4>
-            <form action="menu.html" method="GET">
-                <input class="btn" type="submit" value="Menu">
-            </form>
-        </div>
-        
-        <div class="bottom-container">
-            
-            <div class="section">
-                <div class="icon-container">
-                    <i class="fas fa-hamburger"></i>
-                </div>
-                <div class="contents-container">
-                    <p class="section-title">MENU</p>
-                    <p class="section-body">Get lost in our menu and after much indecision, come to a conclusion as to what you would like to eat</p>
-                </div>
-            </div>
-            
-            <div class="section">
-                <div class="icon-container">
-                    <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <div class="contents-container">
-                    <p class="section-title">LOCATION</p>
-                    <p class="section-body">Set your home address so we know where to send your food. We are everywhere, so location is not an issue!</p>
-                </div>
-            </div>
+        <head>
+
+            <title>Frood</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" type="text/css" href="css/base.css">
+            <link rel="stylesheet" type="text/css" href="css/index.css">
+            <link rel="stylesheet" type="text/css" href="css/index-queries.css">
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+            <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet">
+        </head>
+
+        <body>
+
+            <div class="top-container">
+                <h1>FROOD</h1>
+                <h4>You do the dishes and we'll do the cooking and delivering</h4>
+                
+                <div class="address">
+                    <form>
+                        <input type="input" placeholder="Flat/House No.", name="door-no" id="door-no">
                         
-            <div class="section">
-                <div class="icon-container">
-                    <i class="fas fa-water"></i>
+                        <input type="input" placeholder="Postcode", name="postcode" id="postcode">
+                        
+                        <select name="address-select" id="address-select">
+                        
+                        </select>
+                        
+                    </form>
                 </div>
-                <div class="contents-container">
-                    <p class="section-title">DISHES</p>
-                    <p class="section-body">And now we've done our bit, all that's left for you to do is the dishes <em>(or whatever)</em></p>
+                
+                <form action="menu.html" method="GET">
+                    <input class="btn" type="submit" value="Menu">
+                </form>
+            </div>
+
+            <div class="bottom-container">
+
+                <div class="section">
+                    <div class="icon-container">
+                        <i class="fas fa-hamburger"></i>
+                    </div>
+                    <div class="contents-container">
+                        <p class="section-title">MENU</p>
+                        <p class="section-body">Get lost in our menu and after much indecision, come to a conclusion as to what you would like to eat</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="icon-container">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contents-container">
+                        <p class="section-title">LOCATION</p>
+                        <p class="section-body">Set your home address so we know where to send your food. We are everywhere, so location is not an issue!</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="icon-container">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <div class="contents-container">
+                        <p class="section-title">DISHES</p>
+                        <p class="section-body">And now we've done our bit, all that's left for you to do is the dishes <em>(or whatever)</em></p>
+                    </div>
                 </div>
             </div>
-        </div>
-            
-        <!-- Script Files --> 
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        
-    </body>
-    
-</html>
+
+            <!-- Script Files --> 
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="js/address.js"></script>
+
+        </body>
+
+    </html>
