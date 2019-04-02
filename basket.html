@@ -36,8 +36,13 @@
                         <h2>Your Plate</h2>
                         <hr>
                     </div>
-                    <div class="container-contents">
+                    <div class="container-content">
                     
+                    </div>
+                    <div class="total">
+                        <p>Total: <span id="basket-total">£0.00</span></p>
+                        <input type="button" id="continue-shopping" class="btn basket=btn" value="More Food">
+                        <input type="button" id="end-shopping" class="btn basket=btn" value="Plates Full">
                     </div>
                 </div>
 
@@ -46,15 +51,23 @@
                         <h2>Your Location</h2>
                         <hr>
                     </div>
-                    <div class="container-contents">
-                    
+                    <div class="address">
+                        <p class="address-line1"></p>
+                        <p class="address-line2"></p>
+                        <p class="address-line3"></p>
+                        <p class="address-line4"></p>
+                        <p class="city"></p>
+                        <p class="postcode"></p>
+                        <p class="county"></p>
                     </div>
                 </div>
             </div>
         
             <!-- Script Files --> 
             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-            
+            <script type="text/javascript" src="js/menu.js"></script>
+            <script type="text/javascript" src="js/basket.js"></script>
+            <script type="text/javascript" src="js/removeFromBasket.js"></script>
         </body>
         
 </html>

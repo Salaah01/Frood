@@ -13,11 +13,114 @@ h4 {
     background-repeat: no-repeat;
     background-position: right;
     background-size: cover;
-    height: 500px;
+    height: auto;
     width: auto;
     text-align: center;
     margin-bottom: 80px;
+    padding-bottom: 20px;
 }
+
+
+.address {
+    background-color: rgba(109, 109, 109, 0.41);
+    border: none;
+    width: 70%;
+    height: auto;
+    border-radius: 20px;
+    margin: 5px auto;
+}
+
+.form-group {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    padding: 0;
+}
+
+.form-group:first-of-type {
+    padding-top: 10px;
+    margin-bottom: 25px;
+}
+
+.form-group:last-of-type {
+    padding-bottom: 10px;
+}
+
+.label-container,
+input,
+select,
+option {
+    padding: 2px 1%;
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+    height: 30px;
+}
+
+input,
+select,
+option {
+    outline: none;
+    border: none;
+    width: 40%;
+    border-radius: 5px;
+    margin: 2px 9px;
+    padding: 2px 1%;
+}
+
+select {
+    width: 50%;
+}
+
+.label-container {
+    text-align: right;;
+    margin: 2px 0;
+    padding: 2px 0%;
+    width: 11%;
+    color: white;
+}
+
+
+#door-no-container .label-container,
+#postcode-container .label-container {
+    display: inline;
+    margin: auto;
+}
+
+#door-no-container {
+    width: 15%;
+    margin-right: 1.5%;
+}
+
+#postcode-container {
+    width: 25%;
+}
+
+#door-no,
+#postcode {
+    border-radius: 50px;
+}
+
+#door-no {
+    width: 90%;
+    margin-right: 0.5%;
+    padding-left: 10%;
+}
+
+#postcode {
+    width: 90%;
+    padding-left: 10%;
+}
+
+#address-select,
+.form-group input.btn {
+    border-radius: 0;
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 0;
+    height: 33px;
+}
+
 
 .bottom-container{
     height: 320px;
@@ -68,7 +171,15 @@ h4 {
     letter-spacing: 1px;
 }
 
+.btn {
+    font-size: 1em;
+}
+
 .btn:hover {
     background-color: #c43f31;
+}
+
+fieldset {
+    border-style: none;
 }
 

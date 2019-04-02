@@ -57,3 +57,7 @@ i {
     margin-right: 5px;
     color: #646565;
 }
+
+.hide {
+    display: none;
+}

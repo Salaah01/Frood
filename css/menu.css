@@ -139,6 +139,7 @@ a.cat-link {
 .menu-item-content {
     display: flex;
     flex-direction: column;
+    transition:  2.5s ease;
 }
 
 .menu-item-content i:hover,
@@ -304,10 +305,6 @@ a.cat-link {
     
 }
 
-.hide {
-    display: none;
-}
-
 .overlay-options {
     margin: 0 auto;
     margin-top: 100px;  
@@ -354,4 +351,8 @@ a.cat-link {
     color: #870000;
     font-size: 1.2em;
     
+}
+
+.hide {
+    display: none;
 }

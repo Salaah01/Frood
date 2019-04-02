@@ -1,3 +1,28 @@
+// Update the basket
+window.onload = function () {
+    
+    total = localStorage.getItem("total");
+    if (total === null) {
+        total = "£0.00"
+    }
+    contents = localStorage.getItem("contents");
+    if (contents === null) {
+        contents = ""
+    }
+    $("#basket-total").text(total);
+    $(".right-container .container-content").append(localStorage.getItem("contents"));
+    $("#basket-total").html("<i class='fas fa-shopping-cart'></i>" + total);
+    
+    // If there are no items, show the default BG, else hide it.
+    
+    if (total === "£0.00") {
+        $(".right-container .empty-plate").removeClass("hide");
+        console.log("hi")
+    } else {
+        $(".right-container .empty-plate").addClass("hide");
+    }
+}
+
 menu.forEach(function(elem) {
     var id = "id-" + elem.id;
     $(".plus-item." + id).on("click", function(event){
@@ -237,6 +262,16 @@ $("#overlay-btn-cancel").on("click",function() {
     hideOverlayAll()
 })
 
+// When the user presses on the Basket Button
+$(".basket-btn").on("click", function(){
+    contents = $(".right-container .container-content").html()
+    total = $(".basket-btn span").text()
+
+    window.location.href = "/basket.html";
+
+    localStorage.setItem("contents", contents);
+    localStorage.setItem("total", total)
+});
 
 function showBtn(btn) {
     if (btn === "cancel") {
