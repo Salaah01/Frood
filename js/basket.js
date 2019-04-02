@@ -1,5 +1,5 @@
 // Update the basket on page load
-window.onload = function () {
+document.onload = function () {
     total = localStorage.getItem("total");
     if (total === null) {
         total = "£0.00"
@@ -30,7 +30,7 @@ $("#continue-shopping").on("click", function() {
     contents = $(".left-container .container-content").html();
     total = $("#basket-total").text();
     
-    window.location.href = "/menu.html";
+    window.location.href = "./menu.html";
     
     localStorage.setItem("contents", contents);
     localStorage.setItem("total", total);

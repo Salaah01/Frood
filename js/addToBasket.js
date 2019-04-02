@@ -116,7 +116,7 @@ menu.forEach(function(elem) {
                     inputElem = inputElem + 
                         "<div class='order-body pizza-topping toppingId-" + topping.id + "'>\n" +
                             "<p>\n" +
-                                "<span class='minus-item'><i class='fas fa-minus''></i></span>\n" +
+                                "<span class='minus-item'><i class='fas fa-times'></i></span>\n" +
                                 topping.topping + "\n" +
                             "</p>\n" +
                             "<p><span>&pound" + Number(topping.toppingPrice).toFixed(2) + "</span></p>\n" +
@@ -131,7 +131,7 @@ menu.forEach(function(elem) {
                     "<div class='order-grp " + id + " " + sizeId + "'>\n" +
                         "<div class='order-main'>" +
                             "<p>\n" +
-                                "<span class='minus-item'><i class='fas fa-minus''></i></span>\n" + pizzaSize.size + " " + 
+                                "<span class='minus-item'><i class='fas fa-times'></i></span>\n" + pizzaSize.size + " " + 
                                 item + " Pizza\n" +
                             "</p>\n" +
                             "<p><span>&pound" + total.toFixed(2) + "</span></p>\n" +
@@ -157,7 +157,7 @@ menu.forEach(function(elem) {
                 "<div class='order-grp " + id + "'>\n" +
                     "<div class='order-main'>" +
                         "<p>\n" +
-                            "<span class='minus-item'><i class='fas fa-minus''></i></span>\n" +
+                            "<span class='minus-item'><i class='fas fa-times'></i></span>\n" +
                             item +
                         "</p>\n" +
                         "<p><span>&pound" + Number(price).toFixed(2) + "</span></p>\n" +
@@ -267,7 +267,7 @@ $(".basket-btn").on("click", function(){
     contents = $(".right-container .container-content").html()
     total = $(".basket-btn span").text()
 
-    window.location.href = "/basket.html";
+    window.location.href = "./basket.html";
 
     localStorage.setItem("contents", contents);
     localStorage.setItem("total", total)

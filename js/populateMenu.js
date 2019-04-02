@@ -33,7 +33,7 @@ menu.forEach(function (item) {
                 "<div class='new-row'>\n" +
                     "<p class='item-name'>" + item.item + "</p>\n" +
                     "<p class='item-price'>&pound" + item.price.toFixed(2) + "\n " +
-                        "<span class='plus-item id-" + item.id + "'><i class='fas fa-plus''></i></span>\n" +
+                        "<span class='plus-item id-" + item.id + "'><i class='fas fa-plus'></i></span>\n" +
                         "<span class='no-items id-" + item.id + "'></span>" +
                     "</p>\n" +
                 "</div>"
@@ -44,7 +44,7 @@ menu.forEach(function (item) {
                     "<p class='item-name'>" + item.item + "</p>\n" +
                     "<p class='item-price'>\n" +
                         "&pound" + item.price.toFixed(2) + "\n" +
-                        " <span class='plus-item id-" + item.id + "'><i class='fas fa-plus''></i></span>\n" +
+                        " <span class='plus-item id-" + item.id + "'><i class='fas fa-plus'></i></span>\n" +
                         " <span class='no-items id-" + item.id + "'></span>" +
                     "</p>" +
                 "</div class='new-row\n" +
