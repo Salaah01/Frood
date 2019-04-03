@@ -250,8 +250,7 @@ menu.forEach(function(elem) {
                 })
                 
             })
-            
-            
+          
         }
     })
     
@@ -272,6 +271,15 @@ $(".basket-btn").on("click", function(){
     localStorage.setItem("contents", contents);
     localStorage.setItem("total", total)
 });
+
+// When user presses any of the nav icons {
+$("nav .item").on("click", function() {
+    contents = $(".right-container .container-content").html()
+    total = $(".basket-btn span").text()
+    localStorage.setItem("contents", contents);
+    localStorage.setItem("total", total)
+});
+
 
 function showBtn(btn) {
     if (btn === "cancel") {

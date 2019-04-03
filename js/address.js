@@ -1,49 +1,55 @@
-// API web: https://getaddress.io/
-var key = "JEXzYYg1YEaHR7m1ypyudg18199"
-// https://api.getaddress.io/find/e12bp/5?api-key=JEXzYYg1YEaHR7m1ypyudg18199
-
-// If the user interacts with the address search options (click)
-$(".address-search input").on("click", function(event) {
-    menuBtnText();
-    setSelectOptions();     // Will retrieve address data from API only if both door no. and postcode are completed.
-})
-
-// If the user interacts with the address search options (keydown)
-$(".address-search input").on("keydown", function(event) {
-    if(event.keyCode == 13 || event.keyCode == 9) {
-        menuBtnText();
-        setSelectOptions();     // Will retrieve address data from API only if both door no. and postcode are completed.
-    }
-})
-
-
-// When the user changes the address select options, check if they choose Enter Manually, if so then show a blank form, otherwise pre-populate the form.
-$("#address-select").on("change", function(event) {
-    
-    selectedAddress = $(this).val();
-    addressSearchMth(selectedAddress);
-    if (selectedAddress == "manual") {
-        clearAddressFields();
-    }
-    menuBtnText();
+// When the user presses "edit address", toggle the form
+$("#edit-address-btn").on("click", function() {
+    $(".update-address-form").toggleClass("hide");
 });
 
-// When the user interacts with the manual address fields (click)
-$(".address-fields .form-group input").on("click", function(event) {
-    menuBtnText();
-    /*processUserAddress(); */   
+$("input").on("click", function() {
+    formControlFlow();
 });
 
-// When the user interacts with the manual address fields (keydown)
-$(".address-fields .form-group input").on("keydown", function(event) {
+$("input").on("keydown", function(event) {
     if (event.keyCode == 13 || event.keyCode == 9) {
-/*        processUserAddress();*/
-        menuBtnText();
-    };    
+        formControlFlow();
+    }
 });
+
+$("select").on("click", function() {
+    formControlFlow();
+});
+
+
+$("select").on("change", function() {
+    formControlFlow();
+    prePopulateAddress();
+});
+
+$("#update-address-btn").on("click", function () {
+    if ($(this).val() === "Enter Manually") {
+        $(".address-fields").removeClass("hide")
+    }
+})
+
+// This will run js/address.js which will ask the user to update the address and on continue will load basket.html and will automatically update the address.
+
+function formControlFlow() {
+    // Check if the house/door no have been completed. If so, run the API
+    if ($("#door-no").val() != "" && $("#postcode").val() != "" && $("select").val() === "none") {
+        setSelectOptions();
+    } else if ($("select").val() != "none" && $("select").val() != "manual") {
+        console.log("y")
+        processUserAddress();
+    } else if ($("select").val() === "none") {
+        $(".address-fields").addClass("hide");
+    } else if ($("select").val() === "manual") {
+        $(".address-fields").removeClass("hide");
+        processUserAddress();
+    }
+}
 
 // Using the Postcode and Door Number, it will generate options for the address-select drop down options.
 function setSelectOptions() {
+    
+    var key = "JEXzYYg1YEaHR7m1ypyudg18199";
     
     // Reset all options
     $("#address-select").children().remove()
@@ -73,6 +79,8 @@ function setSelectOptions() {
 
         // Store only the address
         address = data.addresses;
+        latitude = data.latitude;
+        longitude = data.longitude;
         addressElems = [];
 
         // Break the address strings to seperate lines
@@ -121,12 +129,12 @@ function setSelectOptions() {
 // Populates the Address Fields based on what the user has selected. This will trigger when the user presses the button.
 function processUserAddress() {
     
-    addressNo =  addressNo = $("#address-select").val();;
-    console.log(addressNo)
+    // Locate the selected address
+    addressNo =  addressNo = $("#address-select").val();
     if (addressNo != "none" && addressNo != "manual") {
-        console.log("hi")
         addressNo = Number(addressNo);
         userAddress = {
+            geoLocation: [latitude, longitude],
             addressLine1: addressElems[addressNo].addressLine1,
             addressLine2: addressElems[addressNo].addressLine2,
             addressLine3: addressElems[addressNo].addressLine3,
@@ -135,35 +143,31 @@ function processUserAddress() {
             postcode: $("#postcode").val().toUpperCase(),
             county: addressElems[addressNo].county
         }
-         localStorage.setItem("userAddress",JSON.stringify(userAddress));
         
-    } else if (addressNo = "manual") {
+        // Store the Address
+        localStorage.setItem("userAddress",JSON.stringify(userAddress));
         
-        userAddress = {
-            addressLine1: $("#address-line-1").val(),
-            addressLine2: $("#address-line-2").val(),
-            addressLine3: $("#address-line-3").val(),
-            addressLine4: $("#address-line-4").val(),
-            city: $("#city").val(),
-            postcode: $("#in-postcode").val(),
-            county: $("#county").val()
-        }
-         localStorage.setItem("userAddress",JSON.stringify(userAddress));
+        // Update the Button
+        menuBtnText();
+        
+    } else if (addressNo === "manual") {
+        // Update the Button
+        menuBtnText();
     }
+};
+
+// This function will populate the address fields with the currently stored address.
+function prePopulateAddress () {
+    $(".update-address-form #postcode").val(userAddress.postcode);
+    $(".update-address-form #address-line-1").val(userAddress.addressLine1);
+    $(".update-address-form #address-line-2").val(userAddress.addressLine2);
+    $(".update-address-form #address-line-3").val(userAddress.addressLine3);
+    $(".update-address-form #address-line-4").val(userAddress.addressLine4);
+    $(".update-address-form #city").val(userAddress.city);
+    $(".update-address-form #in-postcode").val(userAddress.postcode);
+    $(".update-address-form #county").val(userAddress.county);
 }
 
-// Clears all the Address Fields
-function clearAddressFields() {
-    $("#door-no").val("");
-    $("#postcode").val("");
-    $("#address-line-1").val("");
-    $("#address-line-2").val("");
-    $("#address-line-3").val("");
-    $("#address-line-4").val("");
-    $("#in-city").val("");
-    $("#in-postcode").val("");
-    $("#county").val("");
-}
 
 // Updates button text depending on whether or not the user has inputed a door/house number and postcode.
 function menuBtnText() {
@@ -174,25 +178,42 @@ function menuBtnText() {
     // If user enters sufficent fields for their address manually
     } else if ($("#address-line-1").val() != "" && $("#in-postcode").val() != "") {
         $(".address-search .btn").val("Continue");
+
+        userAddress = {
+            addressLine1: $("#address-line-1").val(),
+            addressLine2: $("#address-line-2").val(),
+            addressLine3: $("#address-line-3").val(),
+            addressLine4: $("#address-line-4").val(),
+            city: $("#city").val(),
+            postcode: $("#in-postcode").val(),
+            county: $("#county").val()
+        }
+        
+        // Store the Address
+        localStorage.setItem("userAddress",JSON.stringify(userAddress));
+        
         $(".address form").attr("action", "menu.html");
     } else {
         $(".address-search .btn").val("Enter Manually");
-    }
-    
-    // If the button text is continue, then update the form action to go to menu.html.
-    if ($(".address-search .btn").val() === "Continue") {
-        processUserAddress();
-        $(".address form").attr("action", "menu.html");
-    } else {
         $(".address form").attr("action", "");
     }
-     
-};
-
-function addressSearchMth(mtd) {
-    if (mtd === "manual") {
+    
+    // Button action depending on its value
+    if ($(".address-search .btn").val() === "Continue") {
+        $("form").attr("action", "menu.html");
+        $(".address-search .btn").attr("type", "submit");
+        $(".address-search .btn").addClass("green-btn");
+        $(".address-search .btn").removeClass("red-btn");
+        
+    } else if ($(".address-search .btn").val() === "Enter Manually") {
+        $("select").val("manual");
         $(".address-fields").removeClass("hide");
+        $(".address-search .btn").removeClass("green-btn");
+        $(".address-search .btn").addClass("red-btn");
     } else {
-        $(".address-fields").addClass("hide");
-    }
+        $(".address form").attr("action", "");
+        $(".address-search .btn").attr("type", "button");
+        $(".address-search .btn").removeClass("green-btn");
+        $(".address-search .btn").addClass("red-btn");
+    } 
 };

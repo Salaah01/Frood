@@ -1,56 +1,66 @@
  <!DOCTYPE html>
-    <html>
+<html>
 
-        <head>
+    <head>
 
-            <title>Frood</title>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" type="text/css" href="css/base.css">
-            <link rel="stylesheet" type="text/css" href="css/basket.css">
-            <link rel="stylesheet" type="text/css" href="css/basket-queries.css">
-            <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/menu.min.css">
-            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-            <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,500,700" rel="stylesheet">
-        </head>
+        <title>Frood</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/base.css">
+        <link rel="stylesheet" type="text/css" href="css/basket.css">
+        <link rel="stylesheet" type="text/css" href="css/basket-queries.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/menu.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" href="resources/leaflet/leaflet.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,500,700" rel="stylesheet">
+         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+   integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+   crossorigin=""/>
+    </head>
 
-        <body>
-            
+    <body>
+
         <nav>  
-            <div class="ui pointing menu">
-                <a class="item">Frood</a>
-                <a class="item">Home</a>
-                <a class="active item">Menu</a>
-                <a class="item">Your Plate
-                </a>
-            </div>
-        </nav>
- 
-            <div class="top-container">
-                <h2>Final Checks</h2>
-                <p>All we need now, is for you to do one final check and tell us where you live. We'll take care of the rest!</p>
-            </div>
-            
-            <div class="main-body">
-                <div class="left-container">
-                    <div class="title">
-                        <h2>Your Plate</h2>
-                        <hr>
-                    </div>
-                    <div class="container-content">
-                    
-                    </div>
-                    <div class="total">
-                        <p>Total: <span id="basket-total">£0.00</span></p>
-                        <input type="button" id="continue-shopping" class="btn basket=btn" value="More Food">
-                        <input type="button" id="end-shopping" class="btn basket=btn" value="Plates Full">
-                    </div>
-                </div>
+        <div class="ui pointing menu">
+            <a class="item" id="nav-logo" href="index.html">Frood</a>
+            <a class="item" id="nav-home" href="index.html">Home</a>
+            <a class="item" id="nav-menu" href="menu.html">Menu</a>
+            <a class="active item" id="nav-basket" href="basket.html">Your Plate</a>
+        </div>
+    </nav>
 
-                <div class="right-container">
-                    <div class="title">
-                        <h2>Your Location</h2>
-                        <hr>
+        <div class="top-container">
+            <h2>Final Checks</h2>
+            <p>One final check to check you have added everything that you want!</p>
+        </div>
+
+        <div class="main-body">
+            <div class="left-container">
+                <div class="title">
+                    <h2>Your Plate</h2>
+                    <hr>
+                </div>
+                <div class="container-content">
+                </div>
+                <div class="total-section">
+                    <div class="btn-container">
+                        <input type="button" id="continue-shopping" class="btn basket-btn green-btn" value="More Food">
+                        <input type="button" id="end-shopping" class="btn basket-btn green-btn" value="Deliver Food">
                     </div>
+                    <p id="total">Total: <span id="basket-total">£0.00</span></p>
+                </div>
+                
+            </div>
+            <div class="right-container">
+                
+                <div class="title">
+                    <h2>Delivery Address</h2>
+                    <hr>
+                </div>
+                
+                <div class="content-container">
+                    
+                    <div id="mapid"></div>
+                    
                     <div class="address">
                         <p class="address-line1"></p>
                         <p class="address-line2"></p>
@@ -60,14 +70,113 @@
                         <p class="postcode"></p>
                         <p class="county"></p>
                     </div>
+                    
+                    <input type="button" class="btn green-btn" id="edit-address-btn" value="Edit Address">
+                    
+                    <div class="update-address-form hide">
+                        <form action="">
+                        
+                            <div class="address-search">
+                                <div class="form-group">
+                                    <div id="door-no-container">
+                                        <div class="label-container">
+                                            <label for="door-no">House/Door No</label>
+                                        </div>
+                                        <input type="text" placeholder="Flat/House No.", name="door-no" id="door-no">
+                                    </div>
+                                    <div id="postcode-container">
+                                        <div class="label-container">
+                                            <label for="postcode">Postcode</label>
+                                        </div>
+                                        <input type="text" placeholder="Postcode", name="postcode" id="postcode" pattern="^(([A-z][0-9]{1,2})|(([A-z][A-zJ-y][0-9]{1,2})|(([A-z][0-9][A-z])|([A-Z][A-zJ-y][0-9]?[A-z])))) [0-9][A-z]{2}$">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <select name="address-select" id="address-select">
+                                        <option value="none">Search Address</option>
+                                        <option value="manual">Enter Manually</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="address-fields hide">
+                                <div class="form-group">
+                                    <div class="label-container">
+                                        <label for="address-line-1">Address Line 1</label>
+                                    </div>
+                                    <input placeholder="Address Line 1" id="address-line-1" name="address-line-1">
+                                </div>
+                                <div class="form-group">
+                                    <div class="label-container">
+                                        <label for="address-line-2">Address Line 2</label>
+                                    </div>
+                                    <input placeholder="Address Line 2" id="address-line-2" name="address-line-2">
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="label-container">
+                                        <label for="address-line-3">Address Line 3</label>
+                                    </div>
+                                    <input placeholder="Address Line 3" id="address-line-3" name="address-line-3">
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="label-container">
+                                        <label for="address-line-4">Address Line 4</label>
+                                    </div>
+                                    <input placeholder="Address Line 4" id="address-line-4" name="address-line-4">
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="label-container">
+                                        <label for="city">City</label>
+                                    </div>
+                                    <input placeholder="City" id="city" name="city">
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="label-container">
+                                        <label for="in-postcode">Postcode</label>
+                                    </div>
+                                    <input placeholder="Postcode" id="in-postcode" name="address-line-4" pattern="^(([A-z][0-9]{1,2})|(([A-z][A-zJ-y][0-9]{1,2})|(([A-z][0-9][A-z])|([A-Z][A-zJ-y][0-9]?[A-z])))) [0-9][A-z]{2}$">
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="label-container">
+                                        <label for="county">County</label>
+                                    </div>
+                                    <input placeholder="County" id="county" name="county">
+                                </div>
+                            </div>
+                            
+                            <input class="btn green-btn" type="button" id="update-address-btn" value="Enter Manually">
+                            
+                        </form>
+                    </div>
                 </div>
+                
             </div>
+        </div>
         
-            <!-- Script Files --> 
-            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-            <script type="text/javascript" src="js/menu.js"></script>
-            <script type="text/javascript" src="js/basket.js"></script>
-            <script type="text/javascript" src="js/removeFromBasket.js"></script>
-        </body>
+        <div class="order-complete hide">
+            <div class="contents">
+                <h1>YOUR ORDER IS ON THE WAY</h1>
+                <h2>Time to sit back and relax...</h2>
+            </div>
+        </div>
+
+        <!-- Script Files --> 
+        <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+   integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+   crossorigin=""></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!--        <script type="text/javascript" src="js/address.js"></script>-->
+        <script type="text/javascript" src="js/menu.js"></script>
+        <script type="text/javascript" src="js/basket.js"></script>
+        <script type="text/javascript" src="js/removeFromBasket.js"></script>
+        <script src="resources/leaflet/leaflet.js"></script>
+         
+    </body>
         
 </html>
