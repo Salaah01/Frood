@@ -64,18 +64,15 @@ function setSelectOptions() {
         doorNo = doorNo.repeat(" ","");
         
         // Retrieve address data using the API
-        //query = "https://api.getaddress.io/find/" + postcode + "/" + doorNo + "?api-key=" + key
+        query = "https://api.getaddress.io/find/" + postcode + "/" + doorNo + "?api-key=" + key;
 
-//            request = new XMLHttpRequest;
-////           request.open("GET", query, true);
-
-//            request.onload = function() {
-//                if (request.status >= 200 && request.status < 400) {
-//                    var data = JSON.parse(request.responseText);
-//                    console.log(data);
-//                }
-
-        var data = JSON.parse('{"latitude":51.515605926513672,"longitude":-0.057411406189203262,"addresses":["39-45 Cavell Street, , , , , London, ","Flat 1-9, 39-45 Cavell Street, , , , London, ","Flat 4, 39-45 Cavell Street, , , , London, ","Flat 5, 37 Cavell Street, , , , London, ","Flat 5, 49 Cavell Street, , , , London, ","Holiday Inn London, 5 Cavell Street, , , , London, "]}');
+        request = new XMLHttpRequest();
+        request.open("GET", query, false);
+        request.send(null);
+        data = JSON.parse(request.responseText);
+ 
+        // DUMMY DATA INCASE API IS NOT USABLE
+        //var data = JSON.parse('{"latitude":51.515605926513672,"longitude":-0.057411406189203262,"addresses":["39-45 Cavell Street, , , , , London, ","Flat 1-9, 39-45 Cavell Street, , , , London, ","Flat 4, 39-45 Cavell Street, , , , London, ","Flat 5, 37 Cavell Street, , , , London, ","Flat 5, 49 Cavell Street, , , , London, ","Holiday Inn London, 5 Cavell Street, , , , London, "]}');
 
         // Store only the address
         address = data.addresses;

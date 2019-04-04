@@ -191,7 +191,7 @@ select {
 /*ORDER COMPLETE*/
 /*=========================*/
 .order-complete {
-    display: flex;
+    display: none;
     position:absolute;
     width: 0;
     height: 0;
