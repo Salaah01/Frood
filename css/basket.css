@@ -147,19 +147,31 @@ h2 {
     margin-top: 5px;
 }
 
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 0;
+}
+
 .label-container,
-input,
-select,
-option {
+input, {
     font-family: 'Lato', sans-serif;
     font-size: 15px;
     letter-spacing: 0.5px;
     height: 25px;
+    padding: 2px 1%;
 }
 
-input,
-select,
-option {
+.label-container {
+    text-align: right;
+    margin: 2px 10px 2px 0;
+    padding: 2px 0%;
+    flex-grow: 1;
+    width: 20%;
+}
+
+input {
     outline: none;
     border: 1px solid #6ca22d;
     width: 60%;
@@ -167,21 +179,9 @@ option {
     margin-bottom: 10px;
     border-radius: 5px;
     padding: 5px;
+    flex-grow: 3;
 }
 
-select {
-    height: 40px;
-    width: 75%
-}
-
-.label-container {
-    display: flex;
-    align-items:flex-end;
-}
-
-#update-address-btn {
-    height: 40px;
-}
 
 #edit-address-btn {
     margin: 10px 0;

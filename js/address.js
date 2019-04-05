@@ -123,6 +123,33 @@ function setSelectOptions() {
    
 }
 
+function getLocationAPI(postcode) {
+    APIData = new Object();
+    postcode = postcode.replace(" ","");
+    var url = "http://api.postcodes.io/postcodes/" + postcode;
+    const request = new XMLHttpRequest();
+    request.open("GET", url);
+    request.send();
+    
+    request.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = JSON.parse(this.responseText);
+            APIData = 
+                {
+                    status: "Postcode Found",
+                    postcode: data.result.postcode,
+                    country: data.result.country,
+                    city: data.result.region,
+                    geoLocaion: [data.result.longitude, data.result.latitude]
+                };
+
+            return APIData;
+        } else {
+            return APIData = {status: "Not Found"}
+        }
+    }  
+};
+
 // Populates the Address Fields based on what the user has selected. This will trigger when the user presses the button.
 function processUserAddress() {
     

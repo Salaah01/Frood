@@ -21,17 +21,21 @@ h4 {
 }
 
 .address {
-    background-color: rgba(109, 109, 109, 0.41);
+    background-color: rgba(47, 47, 47, 0.87);
     border: none;
-    width: 70%;
+    width: 30%;
     height: auto;
+    margin-top: 30px;
     border-radius: 20px;
-    margin: 5px auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
 }
 
 .form-group {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     margin: 10px 0;
     padding: 0;
 }
@@ -47,7 +51,6 @@ h4 {
 
 .label-container,
 input,
-select,
 option {
     padding: 2px 1%;
     font-family: 'Lato', sans-serif;
@@ -57,63 +60,31 @@ option {
 }
 
 input,
-select,
 option {
     outline: none;
     border: none;
-    width: 40%;
     border-radius: 5px;
     margin: 2px 9px;
     padding: 2px 1%;
-}
-
-select {
-    width: 50%;
+    flex-grow: 3;
 }
 
 .label-container {
-    text-align: right;;
+    text-align: right;
     margin: 2px 0;
     padding: 2px 0%;
-    width: 11%;
     color: white;
-}
-
-#door-no-container .label-container,
-#postcode-container .label-container {
-    display: inline;
-    margin: auto;
-}
-
-#door-no-container {
+    flex-grow: 1;
     width: 15%;
-    margin-right: 2.5%;
 }
 
-#postcode-container {
-    width: 25%;
+.submit-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-#door-no,
-#postcode {
-    border-radius: 50px;
-    text-align: center;
-}
-
-#door-no {
-    width: 90%;
-    margin-right: 0.5%;
-    padding-left: 10%;
-    padding-right: 10%;
-}
-
-#postcode {
-    width: 90%;
-    padding-left: 10%;
-    padding-right: 10%;
-}
-
-#address-select,
 .form-group input.btn {
     border-radius: 0;
     margin: 0;
@@ -121,7 +92,6 @@ select {
     padding: 0;
     height: 33px;
 }
-
 
 .bottom-container{
     height: 320px;
@@ -176,7 +146,4 @@ select {
     font-size: 1em;
 }
 
-fieldset {
-    border-style: none;
-}
 
