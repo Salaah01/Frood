@@ -10,12 +10,8 @@
 
 @media only screen and (max-width: 1245px) {
     
-    .top-container {
-        margin-bottom: 4%;
-    }
-    
-    #door-no-container {
-        width: 20%;
+    form {
+        width: 60%;
     }
     
     .section-body {
@@ -28,20 +24,6 @@
 
 /* Small table to small big tablet from 768 to 1023px */
 @media only screen and (max-width:1023px) {
-    
-    .top-container h4{
-        margin-left: 5%;
-        margin-right: 5%;
-    }
-    
-    .address {
-        width: 90%;
-    }
-    
-    #door-no-container,
-    #postcode-container {
-        width: 25%;
-    }
     
     input {
         width: 50%;
@@ -94,32 +76,16 @@
     }
     
     .top-container {
-        padding-bottom: 29px;
         margin: 0;
     }
     
-    .address {
-        width: 95%;
+    form {
+        width: 80%;
     }
-    
-    #door-no-container,
-    #postcode-container {
-        width: 60%;
-    }
-    
-    #postcode-container {
-        padding-right: 2%;
-    }
-    
-    #address-select {
-        width: 100%;
-    }
-    
-    
+        
     .label-container {
-        width: 25%;
-        text-align: left;
-        font-size: 0.8em;
+        width: 35%;
+        margin-right: 10px;
     }
     
     input {
@@ -169,8 +135,33 @@
         margin-bottom: 5%;
     }
     
-    #postcode-container {
-        padding-right: 5%;
+    form {
+        width: 90%;
+        margin-top: 50px;
+    }
+    
+    .address {
+        padding-bottom: 10px;
+    }
+    
+    .form-group {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .label-container,
+    input {
+        width: 80%;
+        margin: 0;
+    }
+    
+    .label-container {
+        height: auto;
+        text-align: left;
+    }
+    
+    .submit-btn {
+        margin: 15px 0 45px 0;
     }
     
     .section {

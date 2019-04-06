@@ -4,12 +4,15 @@
 
 @media only screen and (max-width: 1245px) {
     
-    input,
-    select,
-    option {
-        width: 95%;
+    .right-container {
+        padding-left: 20px;
+        padding-right: 20px;
     }
     
+    .label-container {
+        font-size: 13px;
+    }
+
 }
 
 /* Small table to small big tablet from 768 to 1023px */
@@ -49,6 +52,10 @@
         order: 1;
     }
     
+    .label-container {
+        font-size: 15px;
+    }
+    
     #total {
         padding-bottom: 15px;
     }
@@ -81,6 +88,10 @@
     .order-complete .contents h2 {
         font-size: 3vw;
         letter-spacing: 1.5px;
+    }
+    
+    .label-container {
+        width: 40%;
     }
     
 }

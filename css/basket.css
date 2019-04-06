@@ -1,14 +1,3 @@
-body {
-/*
-    background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.1) ), url(img/basket-bg.jpg);
-    background: linear-gradient(#ffffff,#ffafaf ), url(img/basket-bg.jpg);
-    background-blend-mode:luminosity;
-    background-repeat: no-repeat;
-    background-size: cover;
-*/
-
-}
-
 h2 {
     font-size: 1.75em;
     margin: 0;
@@ -129,6 +118,11 @@ h2 {
     margin-right: 15px;
 }
 
+.basket-btn:hover,
+#basket-total:hover{
+    cursor: pointer;
+}
+
 /*=========================*/
 /*RIGHT CONTAINER*/
 /*=========================*/
@@ -168,7 +162,7 @@ input, {
     margin: 2px 10px 2px 0;
     padding: 2px 0%;
     flex-grow: 1;
-    width: 20%;
+    width: 30%;
 }
 
 input {
@@ -181,7 +175,6 @@ input {
     padding: 5px;
     flex-grow: 3;
 }
-
 
 #edit-address-btn {
     margin: 10px 0;

@@ -171,13 +171,15 @@ menu.forEach(function(elem) {
             $(".overlay").removeClass("hide");
             $(".other-options").removeClass("hide");
             showBtn("cancel")
+            $(".other-options").children().remove();    // reset the options
             
             // Fill the overlay with each available option
             elem.options.forEach(function(opt) {
+                
                 $(".other-options").append(
                     "<div class='option-grp' id='optId-" + opt.id + "'>\n" +
                         "<p>\n" + opt.option + "<p>\n" +
-                        "<p><span class='option-add'><i class='fas fa-plus-circle''></i></span></p>\n" +
+                        "<p><span class='option-add'><i class='fas fa-plus'></i></span></p>\n" +
                     "</div>" 
                 )
             })
@@ -236,7 +238,7 @@ menu.forEach(function(elem) {
                         "<div class='order-grp " + id + "'>\n" +
                             "<div class='order-main'>" +
                                 "<p>\n" +
-                                    "<span class='minus-item'><i class='fas fa-minus''></i></span>\n" +
+                                    "<span class='minus-item'><i class='fas fa-times'></i></span>\n" +
                                         selectedItem.item +
                                 "</p>\n" +
                                 "<p><span>&pound" + Number(selectedItem.price).toFixed(2) + "</span></p>\n" + 
