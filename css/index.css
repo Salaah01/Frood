@@ -1,74 +1,154 @@
-h1 {
-    padding-top: 8%;
-    color: white;
-}
+    h1 {
+        padding-top: 8%;
+        color: white;
+    }
 
-h4 {
-    color: white;
-    margin-top: 10px;
-}
+    h4 {
+        color: white;
+        margin-top: 10px;
+    }
 
-.top-container {
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(img/bg01.jpg);
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: cover;
-    height: 500px;
-    width: auto;
-    text-align: center;
-    margin-bottom: 80px;
-}
+    .top-container {
+        background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(img/bg01.jpg);
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: cover;
+        height: auto;
+        width: auto;
+        text-align: center;
+        margin-bottom: 80px;
+        padding-bottom: 20px;
+    }
 
-.bottom-container{
-    height: 320px;
-}
+    .address {
+        background-color: rgba(47, 47, 47, 0.87);
+        border: none;
+        width: 100%;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: 1.25s;
+        -webkit-transform: translateY(-100%);
+                transform: translateY(-100%);
+        transition: transform 300ms linear;
+    }
 
-.section {
-    box-shadow: 0px -1px 10px #c4c4c4; 
-    width: 30%;
-    text-align: center;
-    float: left;
-    margin-left: 2.5%;
-    height: 110%;
-    border-radius: 10px;
-}
+    .open-address {
+        -webkit-transform: none;
+                transform: none;
+        transition: transform 300ms linear;
+    }
 
-.section:hover{
-    box-shadow: 0px -1px 25px #c4c4c4;
-}
+    form {
+        width: 40%;
+    }
 
-.icon-container{
-    background-color: #e74c3c;
-    width: 100px;
-    height: 100px;
-    margin: auto;
-    margin-top: 20px;
-    border-radius: 50%;
-    text-align: center;
-}
+    .form-group {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
+        padding: 0;
+    }
 
-.icon-container i {
-    color: white;
-    font-size: 72px;
-    padding-top: 9px;
-}
+    .label-container,
+    input {
+        padding: 2px 1%;
+        font-family: 'Lato', sans-serif;
+        font-size: 17px;
+        letter-spacing: 0.5px;
+        height: 30px;
+    }
 
-.section-title {
-    font-weight: 700;
-    font-size: 25px;
-    letter-spacing: 2px;
-}
+    input {
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        margin: 2px 9px;
+        padding: 2px 1%;
+        flex-grow: 3;
+    }
 
-.section-body {
-    margin-top: 0px;
-    width: 80%;
-    margin: auto;
-    font-size: 24px;
-    font-weight: 300;
-    letter-spacing: 1px;
-}
+    .incomplete-data {
+        background-color: pink;
+    }
 
-.btn:hover {
-    background-color: #c43f31;
-}
+
+    .label-container {
+        text-align: right;
+        margin: 2px 0;
+        padding: 2px 0%;
+        color: white;
+        flex-grow: 1;
+        width: 15%;
+    }
+
+    .submit-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .form-group input.btn {
+        border-radius: 0;
+        margin: 0;
+        margin-bottom: 20px;
+        padding: 0;
+        height: 33px;
+    }
+
+    .bottom-container{
+        height: 320px;
+    }
+
+    .section {
+        box-shadow: 0px -1px 10px #c4c4c4; 
+        width: 30%;
+        text-align: center;
+        float: left;
+        margin-left: 2.5%;
+        height: 110%;
+        border-radius: 10px;
+    }
+
+    .section:hover{
+        box-shadow: 0px -1px 25px #c4c4c4;
+    }
+
+    .icon-container{
+        background-color: #e74c3c;
+        width: 100px;
+        height: 100px;
+        margin: auto;
+        margin-top: 20px;
+        border-radius: 50%;
+        text-align: center;
+    }
+
+    .icon-container i {
+        color: white;
+        font-size: 72px;
+        padding-top: 9px;
+    }
+
+    .section-title {
+        font-weight: 700;
+        font-size: 25px;
+        letter-spacing: 2px;
+    }
+
+    .section-body {
+        margin-top: 0px;
+        width: 80%;
+        margin: auto;
+        font-size: 24px;
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
+
+    .btn {
+        font-size: 1.5em;
+    }
+
 

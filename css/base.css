@@ -27,9 +27,10 @@ h4 {
 }
 
 .btn {
-    width: 130px;
+    width: 150px;
+    text-align: center;
     height: 40px;
-    background-color: #e74c3c;
+    
     border: 0;
     color: white;
     font-family: 'Lato', sans-serif;
@@ -38,11 +39,37 @@ h4 {
     vertical-align: middle;
     letter-spacing: 1px;
     border-radius: 0.25rem;
+    padding: 0 10px;
+}
+
+.btn:hover {
+    cursor: pointer;
 }
 
 .btn:active {
     box-shadow: 0 3px 0 #00823F;
     top: 3px;
+}
+
+.disabled-btn {
+    color: #6c6a6a;
+    background-color: #c9c9c9;
+}
+
+.red-btn {
+    background-color: #e74c3c;
+}
+
+.red-btn:hover {
+    background-color: #f84c3a;
+}
+
+.green-btn {
+    background-color: #6ca22d;
+}
+
+.green-btn:hover {
+    background-color: #83c634;
 }
 
 .row {
@@ -57,3 +84,8 @@ i {
     margin-right: 5px;
     color: #646565;
 }
+
+.hide {
+    display: none;
+}
+

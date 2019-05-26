@@ -24,8 +24,6 @@ $(".container-content").on("click", ".order-body", function(event) {
     
 });
 
-
-
 // Event listner for when a item is removed from the basket
 // Function will:   - Update the baket total
 //                  - Remove the item

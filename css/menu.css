@@ -116,12 +116,12 @@ hr {
 
 .left-container li {
     background-color: #ecf0f1;
-    border: 0.5px dotted #870000;
+    border: 0.5px dotted #6ca22d;
     border-radius: 5px;
 }
 
 .left-container li:hover {
-    background-color: #870000;
+    background-color: #6ca22d;
     border: 0.5px dotted #870000;
     border-radius: 5px;
     color: white;
@@ -139,11 +139,12 @@ a.cat-link {
 .menu-item-content {
     display: flex;
     flex-direction: column;
+    transition:  2.5s ease;
 }
 
 .menu-item-content i:hover,
 .main-item-selected {
-    color: #2ecc71;
+    color: #6ca22d;
 }
 
 .menu-item-content.pizza p.item-info{
@@ -209,10 +210,17 @@ a.cat-link {
     border-radius: 5px;
 }
 
+.basket-btn:hover {
+    background-color: #3962ef;
+}
+
 #basket-total {
     margin: 0;
     color: white;
     margin-right: 10px;
+    float: right;
+    vertical-align: middle;
+    padding: 2px;
 }
 
 .basket-btn i {
@@ -221,12 +229,6 @@ a.cat-link {
 
 #basket-total i {
     color: white;
-}
-
-#basket-total {
-    float: right;
-    vertical-align: middle;
-    padding: 2px;
 }
 
 .empty-plate {
@@ -273,7 +275,7 @@ a.cat-link {
 }
 
 .minus-item i:hover{
-    color: #870000;
+    color: #d10a0a;
 }
 
 /*--------------------------------------------------*/
@@ -287,11 +289,11 @@ a.cat-link {
 }
 
 #overlay-btn-cancel i{
-    color: #e30303;
+    color: #b50000;
 }
 
 #overlay-btn-continue i{
-    color: #2ecc71;
+    color: #6ca22d;
 }
 
 #overlay-btn-skip {
@@ -302,10 +304,6 @@ a.cat-link {
     font-size: 1.5em;
     margin-top: 5px;
     
-}
-
-.hide {
-    display: none;
 }
 
 .overlay-options {
@@ -329,7 +327,7 @@ a.cat-link {
     padding-left: 20px;
     padding-right: 20px;
     justify-content:space-between;
-    border: 1px solid #870000;
+    border: 1px solid #6ca22d;
     background-color: #f7f7f7;
     width: 90%;
     border-radius: 5px;
@@ -337,12 +335,12 @@ a.cat-link {
 }
 
 .option-selected {
-    background-color: #870000;
+    background-color: #6ca22d;
     color: white;
 }
 
 .option-grp:hover {
-    background-color: #870000;
+    background-color: #6ca22d;
     color: white;
 }
 
@@ -351,7 +349,11 @@ a.cat-link {
 }
 
 .option-add i {
-    color: #870000;
-    font-size: 1.2em;
+    color: #6ca22d;
+    font-size: 1em;
     
+}
+
+.hide {
+    display: none;
 }

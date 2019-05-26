@@ -1,3 +1,28 @@
+// Update the basket
+window.onload = function () {
+    
+    total = localStorage.getItem("total");
+    if (total === null) {
+        total = "£0.00"
+    }
+    contents = localStorage.getItem("contents");
+    if (contents === null) {
+        contents = ""
+    }
+    $("#basket-total").text(total);
+    $(".right-container .container-content").append(localStorage.getItem("contents"));
+    $("#basket-total").html("<i class='fas fa-shopping-cart'></i>" + total);
+    
+    // If there are no items, show the default BG, else hide it.
+    
+    if (total === "£0.00") {
+        $(".right-container .empty-plate").removeClass("hide");
+        console.log("hi")
+    } else {
+        $(".right-container .empty-plate").addClass("hide");
+    }
+}
+
 menu.forEach(function(elem) {
     var id = "id-" + elem.id;
     $(".plus-item." + id).on("click", function(event){
@@ -91,7 +116,7 @@ menu.forEach(function(elem) {
                     inputElem = inputElem + 
                         "<div class='order-body pizza-topping toppingId-" + topping.id + "'>\n" +
                             "<p>\n" +
-                                "<span class='minus-item'><i class='fas fa-minus''></i></span>\n" +
+                                "<span class='minus-item'><i class='fas fa-times'></i></span>\n" +
                                 topping.topping + "\n" +
                             "</p>\n" +
                             "<p><span>&pound" + Number(topping.toppingPrice).toFixed(2) + "</span></p>\n" +
@@ -106,7 +131,7 @@ menu.forEach(function(elem) {
                     "<div class='order-grp " + id + " " + sizeId + "'>\n" +
                         "<div class='order-main'>" +
                             "<p>\n" +
-                                "<span class='minus-item'><i class='fas fa-minus''></i></span>\n" + pizzaSize.size + " " + 
+                                "<span class='minus-item'><i class='fas fa-times'></i></span>\n" + pizzaSize.size + " " + 
                                 item + " Pizza\n" +
                             "</p>\n" +
                             "<p><span>&pound" + total.toFixed(2) + "</span></p>\n" +
@@ -132,7 +157,7 @@ menu.forEach(function(elem) {
                 "<div class='order-grp " + id + "'>\n" +
                     "<div class='order-main'>" +
                         "<p>\n" +
-                            "<span class='minus-item'><i class='fas fa-minus''></i></span>\n" +
+                            "<span class='minus-item'><i class='fas fa-times'></i></span>\n" +
                             item +
                         "</p>\n" +
                         "<p><span>&pound" + Number(price).toFixed(2) + "</span></p>\n" +
@@ -146,13 +171,15 @@ menu.forEach(function(elem) {
             $(".overlay").removeClass("hide");
             $(".other-options").removeClass("hide");
             showBtn("cancel")
+            $(".other-options").children().remove();    // reset the options
             
             // Fill the overlay with each available option
             elem.options.forEach(function(opt) {
+                
                 $(".other-options").append(
                     "<div class='option-grp' id='optId-" + opt.id + "'>\n" +
                         "<p>\n" + opt.option + "<p>\n" +
-                        "<p><span class='option-add'><i class='fas fa-plus-circle''></i></span></p>\n" +
+                        "<p><span class='option-add'><i class='fas fa-plus'></i></span></p>\n" +
                     "</div>" 
                 )
             })
@@ -211,7 +238,7 @@ menu.forEach(function(elem) {
                         "<div class='order-grp " + id + "'>\n" +
                             "<div class='order-main'>" +
                                 "<p>\n" +
-                                    "<span class='minus-item'><i class='fas fa-minus''></i></span>\n" +
+                                    "<span class='minus-item'><i class='fas fa-times'></i></span>\n" +
                                         selectedItem.item +
                                 "</p>\n" +
                                 "<p><span>&pound" + Number(selectedItem.price).toFixed(2) + "</span></p>\n" + 
@@ -225,8 +252,7 @@ menu.forEach(function(elem) {
                 })
                 
             })
-            
-            
+          
         }
     })
     
@@ -236,6 +262,25 @@ menu.forEach(function(elem) {
 $("#overlay-btn-cancel").on("click",function() {
     hideOverlayAll()
 })
+
+// When the user presses on the Basket Button
+$(".basket-btn").on("click", function(){
+    contents = $(".right-container .container-content").html()
+    total = $(".basket-btn span").text()
+
+    window.location.href = "./basket.html";
+
+    localStorage.setItem("contents", contents);
+    localStorage.setItem("total", total)
+});
+
+// When user presses any of the nav icons {
+$("nav .item").on("click", function() {
+    contents = $(".right-container .container-content").html()
+    total = $(".basket-btn span").text()
+    localStorage.setItem("contents", contents);
+    localStorage.setItem("total", total)
+});
 
 
 function showBtn(btn) {

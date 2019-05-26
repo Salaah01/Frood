@@ -1,0 +1,137 @@
+@media only screen and (max-width: 1550px) {
+
+}
+
+@media only screen and (max-width: 1245px) {
+    
+    .right-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .label-container {
+        font-size: 13px;
+    }
+
+}
+
+/* Small table to small big tablet from 768 to 1023px */
+@media only screen and (max-width:1023px) {
+    
+    .order-complete .contents h1 {
+        font-size: 3.5vw;
+    }
+
+}
+
+@media only screen and (max-width:980px) {
+
+    .top-container {
+        width: 95%;
+    }
+    
+    .left-container,
+    .right-container {
+        width: 90%;
+        float: none;
+        margin: 0 auto 50px auto;
+    }
+    
+    .main-body {
+        display: flex;
+        flex-direction: column;
+        z-index: 0;
+    }
+
+    
+    .left-container {
+        order: 2;
+    }
+    
+    .right-container {
+        order: 1;
+    }
+    
+    .label-container {
+        font-size: 15px;
+    }
+    
+    #total {
+        padding-bottom: 15px;
+    }
+    
+    .order-complete {
+        position:absolute;
+
+    }
+    
+    .order-complete .contents h1 {
+        font-size: 4.5vw;
+        letter-spacing: 1px;
+    }
+    
+    .order-complete .contents h2 {
+        font-size: 3vw;
+        letter-spacing: 1px;
+    }
+    
+}
+
+/* Small phones to small tablets from 481 to 767px */
+@media only screen and (max-width:767px) {
+    
+    .order-complete .contents h1 {
+        font-size: 5vw;
+        letter-spacing: 1.5px;
+    }
+    
+    .order-complete .contents h2 {
+        font-size: 3vw;
+        letter-spacing: 1.5px;
+    }
+    
+    .label-container {
+        width: 40%;
+    }
+    
+}
+
+@media only screen and (max-width:555px) {
+    
+    .total-section {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .total-section #total {
+        order: 1;
+    }
+    
+    .total-section .btn-container {
+        order: 2;
+    }
+    
+}
+
+/* Small phones to small tablets from 370 to 414px (iPhone 6/7/8) */
+@media only screen and (max-width:414px) {
+    
+    .top-container {
+        text-align: center;
+    }
+    
+    .order-complete .contents h1 {
+        font-size: 5.5vw;
+        letter-spacing: 1.5px;
+    }
+    
+    .order-complete .contents h2 {
+        font-size: 4.5vw;
+        letter-spacing: 1.5px;
+    }
+    
+}
+
+/* From 0 to 369px (Galaxy S5) */
+@media only screen and (max-width:360px) {
+}

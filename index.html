@@ -13,36 +13,40 @@
         </head>
 
         <body>
+            
+            <div class="address">
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <div class="label-container">
+                                <label for="address-line-1">Address Line 1</label>
+                            </div>
+                            <input placeholder="Address Line 1" id="address-line-1" name="address-line-1">
+                        </div>
+                        <div class="form-group">
+                            <div class="label-container">
+                                <label for="address-line-2">Address Line 2</label>
+                            </div>
+                            <input placeholder="Address Line 2" id="address-line-2" name="address-line-2">
+                        </div>
 
+                        <div class="form-group">
+                            <div class="label-container">
+                                <label for="in-postcode">Postcode</label>
+                            </div>
+                            <input placeholder="Postcode" id="postcode" name="postcode" pattern="^(([A-z][0-9]{1,2})|(([A-z][A-zJ-y][0-9]{1,2})|(([A-z][0-9][A-z])|([A-Z][A-zJ-y][0-9]?[A-z])))) [0-9][A-z]{2}$" required >
+                            
+                        </div>
+                            
+                        <div class="submit-btn">
+                            <input class="btn green-btn" id="submit-address" type="button" value="Continue">
+                        </div>
+                    </form>
+                </div>
+            
             <div class="top-container">
                 <h1>FROOD</h1>
                 <h4>You do the dishes and we'll do the cooking and delivering</h4>
-                
-                <div class="address">
-                    <form>
-                        <input type="input" placeholder="Flat/House No.", name="door-no" id="door-no">
-                        
-                        <input type="input" placeholder="Postcode", name="postcode" id="postcode">
-                        
-                        <select name="address-select" id="address-select">
-                            <option value="none"></option>
-                            <option value="manual">Enter Manually</option>
-                        </select>
-                        
-                        <input placeholder="Address Line 1" id="address-line-1" name="address-line-1">
-                        <input placeholder="Address Line 2" id="address-line-2" name="address-line-2">
-                        <input placeholder="Address Line 3" id="address-line-3" name="address-line-3">
-                        <input placeholder="Address Line 4" id="address-line-4" name="address-line-4">
-                        <input placeholder="City" id="in-city" name="in-city">
-                        <input placeholder="Postcode" id="in-postcode" name="in-postcode">
-                        <input placeholder="County" id="county" name="county">
-                        
-                    </form>
-                </div>
-                
-                <form action="menu.html" method="GET">
-                    <input class="btn" type="submit" value="Menu">
-                </form>
+                <input type="button" class="btn red-btn" id="open-address" value="Menu">
             </div>
 
             <div class="bottom-container">
@@ -80,7 +84,7 @@
 
             <!-- Script Files --> 
             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-            <script src="js/address.js"></script>
+            <script type="text/javascript" src="js/index.js"></script>
 
         </body>
 
