@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 h2 {
     font-size: 1.75em;
     margin: 0;
@@ -212,4 +213,220 @@ input {
     font-size: 5em;
     font-size: 4.5vw;
     padding: 0 10px;
+=======
+h2 {
+    font-size: 1.75em;
+    margin: 0;
+    padding-top: 1px;
+    margin: right: 30px;
+}
+
+.main-body {
+    margin: 0 auto;
+}
+
+/*=========================*/
+/*MAIN CONTAINERS*/
+/*=========================*/
+
+.top-container {
+    width: 90%;
+    margin: 30px auto;
+}
+
+.left-container,
+.right-container {
+    border-radius: 20px;
+    box-shadow: 0px -1px 5px #c4c4c4;
+    background-color: white;
+    padding: 30px;
+}
+
+.left-container {
+    width: 50%;
+    float: left;
+    margin-left: 5%;
+    margin-bottom: 30px;
+}
+
+.right-container {
+    width: 30%;
+    float: left;
+    margin-left: 2%;
+}
+
+/*=========================*/
+/*TOP CONTAINER*/
+/*=========================*/
+
+.top-container h2 {
+    font-size: 3em;
+}
+
+.top-container p {
+    margin: 0;
+}
+
+/*=========================*/
+/*LEFT-CONTAINER*/
+/*=========================*/
+
+.left-container p {
+    margin: 0;
+}
+
+/*BASKET ITEMS*/
+
+.order-main {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 00;
+    letter-spacing: 0.5px;
+    margin: 0px 10px 0px 0;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.order-body {
+    font-style: italic;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: flex;
+    margin-left: 25px;
+    margin-right: 10px;
+    font-size: 0.80em;
+    justify-content: space-between
+}
+
+.order-grp {
+    border-bottom: 0.5px solid #afafaf;
+    border-bottom-style: dotted
+}
+
+.order-grp:hover {
+    background-color: #dedede;
+}
+
+.minus-item i:hover{
+    color: #d10a0a;
+}
+
+/*TOTALS SECTION*/
+
+.total-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+}
+
+#total {
+    text-align: right;
+    font-size: 1.5em;
+    margin-right: 10px;
+    padding: 0;
+}
+
+.btn {
+    font-size: 1em;
+    letter-spacing: 1.4px;
+    height: 40px;
+    margin-right: 15px;
+}
+
+.basket-btn:hover,
+#basket-total:hover{
+    cursor: pointer;
+}
+
+/*=========================*/
+/*RIGHT CONTAINER*/
+/*=========================*/
+
+#mapid {
+    height:  300px;
+    z-index: 0;
+}
+
+.address {
+    text-align: center;
+}
+
+.address p {
+    margin: 0;
+    margin-top: 5px;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 0;
+}
+
+.label-container,
+input, {
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    height: 25px;
+    padding: 2px 1%;
+}
+
+.label-container {
+    text-align: right;
+    margin: 2px 10px 2px 0;
+    padding: 2px 0%;
+    flex-grow: 1;
+    width: 30%;
+}
+
+input {
+    outline: none;
+    border: 1px solid #6ca22d;
+    width: 60%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 5px;
+    flex-grow: 3;
+}
+
+#edit-address-btn {
+    margin: 10px 0;
+}
+
+/*=========================*/
+/*ORDER COMPLETE*/
+/*=========================*/
+.order-complete {
+    display: none;
+    position:absolute;
+    width: 0;
+    height: 0;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.36);
+    transition:  opacity .25s;
+    opacity: 0;
+    z-index: 100;
+}
+
+.order-complete .contents {
+    background-color:  rgb(108, 162, 45);
+    width: 100%;
+    font-style: italic;
+    text-align: center;
+    color: white;
+    padding: 30px;
+    box-shadow: 1px 0px 30px 10px rgb(108, 162, 45);
+    margin-bottom: 10%;
+}
+
+.order-complete .contents h1 {
+    font-size: 5em;
+    font-size: 4.5vw;
+    padding: 0 10px;
+>>>>>>> 59051d47440d9b46857a19d8a194a3f42d4423e3
 }
