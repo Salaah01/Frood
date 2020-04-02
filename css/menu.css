@@ -69,10 +69,8 @@ section {
 
 .mid-container {
     width: 50%;
-    margin: 0 auto;
-    padding-top: 30px;
-    padding-left: 50px;
-    padding-right: 50px;  
+    margin: 0 auto 40px;
+    padding: 40px 50px 0;
 }
 
 .right-container {
@@ -303,12 +301,12 @@ a.cat-link {
 .overlay-btn {
     font-size: 1.5em;
     margin-top: 5px;
-    
+
 }
 
 .overlay-options {
     margin: 0 auto;
-    margin-top: 100px;  
+    margin-top: 100px;
     height: 500px;
     width: 40%;
     background-color: #ecf0f1;
@@ -351,7 +349,7 @@ a.cat-link {
 .option-add i {
     color: #6ca22d;
     font-size: 1em;
-    
+
 }
 
 .hide {
